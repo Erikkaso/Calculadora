@@ -58,8 +58,15 @@ public class Teclado extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		JButton b = (JButton) e.getSource();
-		 memoria.setNumero(b.getText());
-		display.setLabel(memoria.getNumeros());
+		memoria.setNumero(b.getText());
+		if(b.getText().equals("=")) {
+			display.setLabel(""+memoria.resultado);
+			memoria.resultado=0;
+		}
+		else 
+			display.setLabel(memoria.getNumeros());
+		
+		
         
 	}
 	
